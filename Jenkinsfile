@@ -12,7 +12,7 @@ stages {
  
  stage (‘Deploy_WebApp’) {
             steps {
-              sh 'scp target/*.war devops@10.0.2.15:~/tomcat/webapps/'
+              sh 'scp target/*.war vagrant@10.4.40.77:/home/vagrant/tomcat/apache-tomcat-9.0.6/webapps/'
             }
         }
 
