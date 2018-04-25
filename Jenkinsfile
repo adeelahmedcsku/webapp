@@ -8,6 +8,15 @@ stages {
  steps {  
  sh "${MAVEN_HOME}/bin/mvn clean package"  
     }  
- }  
+ }
+ 
+ stage (‘Deploy_WebApp’) {
+            steps {
+              sh 'scp target/*.war devops@10.4.10.115:~/tomcat/webapps/'
+            }
+        }
+
+ 
+ 
  } 
 }
